@@ -17,7 +17,7 @@ class JogosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create jogo" do
     assert_difference("Jogo.count") do
-      post jogos_url, params: { jogo: { local: @jogo.local, placar_mandante: @jogo.placar_mandante, placar_visitante: @jogo.placar_visitante, time_mandante: @jogo.time_mandante, time_visitante: @jogo.time_visitante } }
+      post jogos_url, params: { jogo: { local: @jogo.local, placar_mandante: @jogo.placar_mandante, placar_visitante: @jogo.placar_visitante, clube_mandante_id: @jogo.clube_mandante_id, clube_visitante_id: @jogo.clube_visitante_id } }
     end
 
     assert_redirected_to jogo_url(Jogo.last)
@@ -34,7 +34,7 @@ class JogosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update jogo" do
-    patch jogo_url(@jogo), params: { jogo: { local: @jogo.local, placar_mandante: @jogo.placar_mandante, placar_visitante: @jogo.placar_visitante, time_mandante: @jogo.time_mandante, time_visitante: @jogo.time_visitante } }
+    patch jogo_url(@jogo), params: { jogo: { local: @jogo.local, placar_mandante: @jogo.placar_mandante, placar_visitante: @jogo.placar_visitante, clube_mandante_id: @jogo.clube_mandante_id, clube_visitante_id: @jogo.clube_visitante_id } }
     assert_redirected_to jogo_url(@jogo)
   end
 

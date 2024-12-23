@@ -24,7 +24,7 @@ class JogosController < ApplicationController
   def create
     @jogo = Jogo.new(jogo_params)
     @clubes = Clube.all.map{|clube|[clube.nome, clube.id] }
-    
+
     respond_to do |format|
       if @jogo.save
         format.html { redirect_to @jogo, notice: "Jogo was successfully created." }
@@ -67,6 +67,6 @@ class JogosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def jogo_params
-      params.require(:jogo).permit(:placar_visitante, :time_visitante, :placar_mandante, :time_mandante, :local)
+      params.require(:jogo).permit(:placar_visitante, :clube_visitante_id, :placar_mandante, :clube_mandante_id, :local)
     end
 end

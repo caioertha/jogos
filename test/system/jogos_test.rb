@@ -17,8 +17,8 @@ class JogosTest < ApplicationSystemTestCase
     fill_in "Local", with: @jogo.local
     fill_in "Placar mandante", with: @jogo.placar_mandante
     fill_in "Placar visitante", with: @jogo.placar_visitante
-    fill_in "Time mandante", with: @jogo.time_mandante
-    fill_in "Time visitante", with: @jogo.time_visitante
+    fill_in "Time mandante", with: @jogo.clube_mandante_id
+    fill_in "Time visitante", with: @jogo.clube_visitante_id
     click_on "Create Jogo"
 
     assert_text "Jogo was successfully created"
@@ -32,8 +32,8 @@ class JogosTest < ApplicationSystemTestCase
     fill_in "Local", with: @jogo.local
     fill_in "Placar mandante", with: @jogo.placar_mandante
     fill_in "Placar visitante", with: @jogo.placar_visitante
-    fill_in "Time mandante", with: @jogo.time_mandante
-    fill_in "Time visitante", with: @jogo.time_visitante
+    fill_in "Time mandante", with: @jogo.clube_mandante_id
+    fill_in "Time visitante", with: @jogo.clube_visitante_id
     click_on "Update Jogo"
 
     assert_text "Jogo was successfully updated"
