@@ -23,7 +23,8 @@ class JogosController < ApplicationController
   # POST /jogos or /jogos.json
   def create
     @jogo = Jogo.new(jogo_params)
-
+    @clubes = Clube.all.map{|clube|[clube.nome, clube.id] }
+    
     respond_to do |format|
       if @jogo.save
         format.html { redirect_to @jogo, notice: "Jogo was successfully created." }
