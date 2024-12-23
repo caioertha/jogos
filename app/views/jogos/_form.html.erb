@@ -13,22 +13,22 @@
 
   <div>
     <%= form.label :placar_visitante, style: "display: block" %>
-    <%= form.number_field :placar_visitante %>
+    <%= form.number_field :placar_visitante, min: 0 %>
   </div>
 
   <div>
     <%= form.label :time_visitante, style: "display: block" %>
-    <%= form.number_field :time_visitante %>
+    <%= form.select :time_visitante, @clubes %>
   </div>
 
   <div>
     <%= form.label :placar_mandante, style: "display: block" %>
-    <%= form.number_field :placar_mandante %>
+    <%= form.number_field :placar_mandante, min: 0 %>
   </div>
 
   <div>
     <%= form.label :time_mandante, style: "display: block" %>
-    <%= form.number_field :time_mandante %>
+    <%= form.select :time_mandante, @clubes %>
   </div>
 
   <div>

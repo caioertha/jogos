@@ -13,6 +13,7 @@ class JogosController < ApplicationController
   # GET /jogos/new
   def new
     @jogo = Jogo.new
+    @clubes = Clube.all.map{|clube|[clube.nome, clube.id] }
   end
 
   # GET /jogos/1/edit
