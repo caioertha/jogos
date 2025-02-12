@@ -1,27 +1,28 @@
-<div id="<%= dom_id jogo %>">
-  <p>
-    <strong>Placar visitante:</strong>
-    <%= jogo.placar_visitante %>
-  </p>
-
-  <p>
-    <strong>Time visitante:</strong>
-    <%= jogo.clube_visitante.nome %>
-  </p>
-
-  <p>
-    <strong>Placar mandante:</strong>
-    <%= jogo.placar_mandante %>
-  </p>
-
-  <p>
-    <strong>Time mandante:</strong>
-    <%= jogo.clube_mandante.nome %>
-  </p>
-
-  <p>
+  <p class="local">
     <strong>Local:</strong>
     <%= jogo.local %>
   </p>
+  
+  <div id="<%= dom_id jogo %>" class="container">
+  
+  <p class="item">
+    <% if jogo.clube_mandante %>
+      <%= jogo.clube_mandante&.nome %>
+    <% else %>
+      Não tem clube mandante
+    <% end %>
+  </p>
 
+  <p class="item">
+    <%= jogo.placar_mandante %>
+    <strong> x </strong>
+  </p>
+
+  <p class="item">
+    <%= jogo.placar_visitante %>
+  </p>
+
+  <p class="item">
+    <%= jogo.clube_visitante&.nome || "Não tem clube mandante" %>
+  </p>
 </div>

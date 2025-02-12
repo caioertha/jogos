@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    background-color: white;
+ }
+ .container{
+   display: flex;
+   background-color: white;
+   gap: 8px;
+   flex-direction: row;
+   justify-content: center;
+   align-items: start;
+ }
+ .local{
+   display: flex;
+   background-color: white;
+   gap: 2px;
+   flex-direction: row;
+   justify-content: center;
+   align-items: end;
+ }
